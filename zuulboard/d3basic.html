@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON Loading</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <meta charset="utf-8">
+    <script type="text/javascript" src="d3/d3.v3.js"></script>
+  </head>
+  <body>
+
+    <script type='text/javascript'>
+
+      var dataset; // global var to hold dataset once loaded
+
+      d3.json('data/deb_builds.json', function(json) {
+
+        generatePs(dataset);   // Function 1: display basic data from json
+      });
+
+      function generatePs(dataset) {
+        alert (dataset.deb_builds[0].builder);
+        d3.select('body').selectAll('p')
+          .data(dataset.deb_builds)
+          .enter()
+          .append('p')
+          .html(function(d) {
+            return   'Builder: '            + d.builder
+                   + '<br> Build Number: '  + d.buildnum
+                   + '<br> Package: '       + d.package
+                   + '<br> Build Time: '    + d.buildtime
+                   + '<br> Success? '       + d.success
+          })
+          .style('color', function(d) {
+            if ( d.buildtime > 50 || d.success == 'false' ) {
+              return 'red';
+            } else {
+              return 'green';
+            }
+          })
+      };
+
+    </script>
+
+    <div id='tooltip' class='hidden'>
+      <p><strong>Recent Build</strong></p>
+      <p><span id='value'></span></p>
+    </div>
+
+    <p> Click here to Update Data</p>
+
+  </body>
+</html>
+

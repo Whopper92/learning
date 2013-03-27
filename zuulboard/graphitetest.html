@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Graphite Testing</title>
+  </head>
+    <body>
+      Test 1: Standard graph(s)
+      <div id='graphiteTest1' style="margin-left:60px;">
+        <img src="http://grumpycat.cat.pdx.edu:8080/render?&target=alias(servers.prod.grumpycat.event_test_deb,'Deb builds')
+                  &title=Package Build Times
+                  &target=alias(servers.prod.grumpycat.event_test_rpm,'RPM builds')&vtitle=Seconds&width=430&height=300
+                  &from=-72h&fontBold=true&lineWidth=3&fgcolor=darkgray&bgcolor=white&yMin=0&yMax=300&lineMode=connected&
+                  colorList=purple,green,orange,red,yellow,#DECAFF&uniqueLegend=true&title=Time to Complete Package Build">
+      </div>
+      <br><br>
+      Test 2: Sparklines
+      <div id='graphitesparkline' style="margin-left:120px;">
+            <img src="http://grumpycat.cat.pdx.edu:8080/render?&graphOnly=true&target=servers.prod.grumpycat.event_test_deb
+                      &height=20&width=100&from=-72h&bgcolor=white&&hideGrid=true&hideAxes=true&hideLegend=true
+                      &margin=0&lineMode=connected&colorList=purple">
+            <br><br>
+            <img src="http://grumpycat.cat.pdx.edu:8080/render?&graphOnly=true&target=servers.prod.grumpycat.event_test_rpm
+                      &height=20&width=100&from=-72h&bgcolor=white&&hideGrid=true&hideAxes=true&hideLegend=true
+                      &margin=0&lineMode=connected&colorList=green">
+      </div>
+      <br>
+      <div id='sparkstats' style="position:absolute;margin-left:200px;margin-top:-125px;">
+        <pre>
+        <u>Average Build Time</u>
+
+         Deb     150 Sec
+
+
+         RPM     60  Sec
+        </pre>
+      </div>
+    </body>
+</html>

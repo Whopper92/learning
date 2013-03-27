@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <script src="js/main.js"></script>
+
+    <title>TimeBlocks Dev</title>
+
+    <!-- Main header box with logo and info -->
+    <div id='headerBox' class='basicbox headerBackground'>
+      <input id='loginButton' class='headerButtonGradient' type='button' value='SIGN IN'>
+    </div> <!-- End headerBox -->
+    <br>
+    <!-- Transition box with dropdown menus -->
+    <div id='dropMenus' class='basicbox dropMenuGradient'>
+
+
+      <!-- Button 1: Logo -->
+      <div id='logoContainer'>
+        <input id='logoButton' class='dropMenuGradient dropMenuButton' type='button' value='TimeBlocks' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+        <div id='logomenu' class='basicbox headerGradient' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+
+          <input id='aboutSubButton' class='basicbox subButtonGradient' type='button' value='About TimeBlocks'>
+
+          <input id='demoSubButton' class='basicbox subButtonGradient' type='button' value='Demo'>
+        </div> <!-- End logomenu -->
+      </div> <!-- End logoContainer -->
+
+      <!-- Button 2: My Blocks -->
+      <div id='manageContainer'>
+        <input id='manageButton' class='dropMenuGradient dropMenuButton' type='button' value='My Blocks' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+
+          <div id='managemenu' class='basicbox headerGradient' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+
+            <input id='dashboardSubButton' class='basicbox subButtonGradient' type='button' value='Block Dashboard'>
+
+            <input id='quickviewSubButton' class='basicbox subButtonGradient' type='button' value='Quick Glance'>
+
+            <input id='bigPictureSubButton' class='basicbox subButtonGradient' type='button' value='The Big Picture'>
+
+        </div> <!-- End managemenu -->
+      </div> <!-- End manageContainer -->
+
+      <!-- Button 3: Learn! -->
+      <div id='tutorialContainer'>
+        <input id='tutorialButton' class='dropMenuGradient dropMenuButton' type='button' value='Learn!'>
+
+          <div id='tutorialmenu' class='basicbox headerGradient' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+
+            <input id='quickLessonSubButton' class='basicbox subButtonGradient' type='button' value='Quick Setup'>
+
+            <input id='maintutSubButton' class='basicbox subButtonGradient' type='button' value='Using TimeBlocks'>
+
+            <input id='advancedtutSubButton' class='basicbox subButtonGradient' type='button' value='Advanced Features'>
+
+        </div> <!-- End tutorialmenu -->
+      </div> <!-- End tutorialContainer -->
+
+      <!-- Button 4: Community -->
+      <div id=contactContainer>
+        <input id='contactButton' class='dropMenuGradient dropMenuButton' type='button' value='Community'>
+
+        <div id='communitymenu' class='basicbox headerGradient' onMouseover='modalpop("logomenu")' onMouseout='modalpop("logomenu")'>
+
+        <input id='feedbackSubButton' class='basicbox subButtonGradient' type='button' value='Leave Feedback'>
+
+        </div> <!-- End communityMenu -->
+      </div> <!-- End contactContainer -->
+
+      <form name='faqsearch' id='faqsearch' action='' method='post'>
+          <input type='text' name='searchterm' id='faqsearchform' placeholder="Search the FAQ's" size='30'>
+        <input type='submit' style='position: absolute; left: -9999px; width: 1px; height: 1px;'/>
+      </form>
+
+    </div> <!-- End dropMenus -->
+    <br><br>
+
+  </head>
+  <body>
+    <!-- Main body box to hold all other content -->
+    <div id='bodyBox' class='basicbox'>
+
+    </div> <!-- End bodyBox -->
+
+
+  </body>
+</html>

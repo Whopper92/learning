@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON Loading</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <script type="text/javascript" src="js/d3histogram.js" /></script>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="d3/d3.v3.js"></script>
+  </head>
+  <body>
+
+    <script type='text/javascript'>
+      createHistogram()
+    </script>
+
+    <div id='tooltip' class='hidden'>
+      <p><strong>Recent Build</strong></p>
+      <p><span id='value'></span></p>
+    </div>
+
+    <div id='dataDisplay' class='hidden'>
+      <div id='exitButton' class='hidden'>X</div>
+      <p><strong><span id='package'></span></strong></p>
+      <hr id='titlehr'><br><br>
+      <p><span id='builder'></span></p>
+      <p><span id='buildtime'></span></p><br>
+      <p><span id='success'></span></p>
+    </div>
+
+    <div id='update'> Click here to Update Data</div><br><br>
+
+  </body>
+</html>

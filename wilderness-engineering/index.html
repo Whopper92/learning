@@ -1,0 +1,514 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>.
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://malsup.github.com/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="js/main.js" /></script>
+    <title>Wilderness Engineering</title>
+  </head>
+  <body>
+
+    <div id='topContainer' class='basicBox'>
+      <div id='headerBox' class='basicBox'>
+      <br><br>
+      <img src='images/logo2.png' />
+      </div>
+      <div id='menuBox' class='basicBox'>
+        <div id='imageSlider' class='basicBox'></div>
+        <input type="button" id='aboutButton' class="styled-button-1" value="About" />
+          <div id='aboutModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="aboutClose" class="close">X</a>
+              <ul class="slider" id='aboutSlider'>
+                <li>
+                  <input type="radio" id="about1" name="slide" checked>
+                  <label for="about1"></label>
+                  <img src="images/aboutslide.jpg" title="Panel 1">
+                </li>
+            </div>
+          </div>
+      </div>
+      <br><br>
+
+      <div id='mainContainer' class='basicBox'>
+        <div id='titleBox' class='basicBox buttonCircle'>
+        </div>
+
+        <!-- Shelter -->
+        <div id='shelter' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Constructing<br>Shelter
+              </div>
+            </div>
+          </div>
+          <div id='shelterModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="shelterClose" class="close">X</a>
+                <ul class="slider" id='shelterSlider'>
+                  <li>
+                    <input type="radio" id="shelter1" name="slide" checked>
+                    <label for="shelter"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter3" name="slide" checked>
+                    <label for="shelter3"></label>
+                    <img src="images/shelterslide1.jpg" id='shelter3' title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter4" name="slide" checked>
+                    <label for="shelter4"></label>
+                    <img src="images/shelterslide2.jpg" id='shelter4' title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter5" name="slide" checked>
+                    <label for="shelter5"></label>
+                    <img src="images/shelterslide3.jpg" id='shelter5' title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter6" name="slide" checked>
+                    <label for="shelter6"></label>
+                    <img src="images/shelterslide4.jpg" id='shelter6' title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter7" name="slide" checked>
+                    <label for="shelter7"></label>
+                    <img src="images/shelterslide5.jpg" id='shelter7' title="Panel 2">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="shelter8" name="slide" checked>
+                    <label for="shelter8"></label>
+                    <img src="images/shelterslide6" id='shelter8' title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="shelter2" name="slide" checked>
+                    <label for="shelter2"></label>
+                    <img src="images/shelter2.jpg" id='shelter2' title="Panel 2">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fire -->
+        <div id='fire' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Building a <br>Fire
+              </div>
+            </div>
+          </div>
+          <div id='fireModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="fireClose" class="close">X</a>
+                <ul class="slider" id='fireSlider'>
+                  <li>
+                    <input type="radio" id="fire1" name="slide" checked>
+                    <label for="fire1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="fire3" name="slide" checked>
+                    <label for="fire3"></label>
+                    <img src="images/fireslide1.jpg" id='fire3img' title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire4" name="slide" checked>
+                    <label for="fire4"></label>
+                    <img src="images/fireslide2.jpg" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire5" name="slide" checked>
+                    <label for="fire5"></label>
+                    <img src="images/fireslide3.jpg" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire6" name="slide" checked>
+                    <label for="fire6"></label>
+                    <img src="images/fireslide4.jpg" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire7" name="slide" checked>
+                    <label for="fire7"></label>
+                    <img src="images/fireslide5.jpg" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire8" name="slide" checked>
+                    <label for="fire8"></label>
+                    <img src="images/fireslide6.jpg" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="fire2" name="slide" checked>
+                    <label for="fire2"></label>
+                    <img src="images/fire2.jpg" id='fire2img' title="Panel 2">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food -->
+        <div id='food' class ='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Eating in<br>the Wilderness
+              </div>
+            </div>
+          </div>
+          <div id='foodModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="foodClose" class="close">X</a>
+                <ul class="slider" id='foodSlider'>
+                  <li>
+                    <input type="radio" id="food1" name="slide" checked>
+                    <label for="food1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="food2" name="slide" checked>
+                    <label for="food2"></label>
+                    <img src="images/foodslide1.jpg" title="Panel 2">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="food3" name="slide" checked>
+                    <label for="food3"></label>
+                    <img src="images/foodslide2.jpg" title="Panel 2">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="food4" name="slide" checked>
+                    <label for="food4"></label>
+                    <img src="images/foodslide3.jpg" title="Panel 2">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="food5" name="slide" checked>
+                    <label for="food5"></label>
+                    <img src="images/universalEdibilityTest.jpg" title="Panel 2">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="food6" name="slide" checked>
+                    <label for="food6"></label>
+                    <img src="images/foodwatersource.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="food7" name="slide" checked>
+                    <label for="food7"></label>
+                    <img src="images/poisonberries.jpg" title="Panel 3">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Water -->
+        <div id='water' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Finding<br>Water
+              </div>
+            </div>
+          </div>
+          <div id='waterModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="waterClose" class="close">X</a>
+                <ul class="slider" id='waterSlider'>
+                  <li>
+                    <input type="radio" id="water1" name="slide" checked>
+                    <label for="water1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+                  <li>
+                    <input type="radio" id="water8" name="slide" checked>
+                    <label for="water8"></label>
+                    <img src="images/waterslide1.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water2" name="slide" checked>
+                    <label for="water2"></label>
+                    <img src="images/waterslide2.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water3" name="slide" checked>
+                    <label for="water3"></label>
+                    <img src="images/watersource1.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water4" name="slide" checked>
+                    <label for="water4"></label>
+                    <img src="images/watersource2.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water5" name="slide" checked>
+                    <label for="water5"></label>
+                    <img src="images/watersource3.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water6" name="slide" checked>
+                    <label for="water6"></label>
+                    <img src="images/foodwatersource.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="water7" name="slide" checked>
+                    <label for="water7"></label>
+                    <img src="images/waterfiltration.gif" title="Panel 3">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day Navigation -->
+        <div id='daynav' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Day<br>Navigation
+              </div>
+            </div>
+          </div>
+          <div id='daynavModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="daynavClose" class="close">X</a>
+                <ul class="slider" id='daynavSlider'>
+                  <li>
+                    <input type="radio" id="daynav1" name="slide" checked>
+                    <label for="daynav1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="daynav2" name="slide" checked>
+                    <label for="daynav2"></label>
+                    <img src="images/daynavslide1.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="daynav3" name="slide" checked>
+                    <label for="daynav3"></label>
+                    <img src="images/daynavslide2.jpg" title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="daynav4" name="slide" checked>
+                    <label for="daynav4"></label>
+                    <img src="images/daynavslide3.jpg" title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="daynav6" name="slide" checked>
+                    <label for="daynav6"></label>
+                    <img src="images/daynavslide4.jpg" title="Panel 3">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="daynav5" name="slide" checked>
+                    <label for="daynav5"></label>
+                    <img src="http://i13.photobucket.com/albums/a259/bfgreen/blog/shadow_stick_diagram.png" title="Panel 3">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Star Navigation -->
+        <div id='nightnav' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Night<br>Navigation
+              </div>
+            </div>
+          </div>
+          <div id='nightnavModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="nightnavClose" class="close">X</a>
+                <ul class="slider" id='nightnavSlider'>
+                  <li>
+                    <input type="radio" id="night1" name="slide" checked>
+                    <label for="night1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="night2" name="slide" checked>
+                    <label for="night2"></label>
+                    <img src="images/north_star1.jpg" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="night3" name="slide" checked>
+                    <label for="night3"></label>
+                    <img src="images/north_star2.jpg" title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="night4" name="slide" checked>
+                    <label for="night4"></label>
+                    <img src="images/moonnav.jpg" title="Panel 3">
+                  </li>
+                  <li>
+                    <input type="radio" id="night5" name="slide" checked>
+                    <label for="night5"></label>
+                    <img src="images/southerncross.jpg" title="Panel 3">
+                  </li>
+
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sextants -->
+        <div id='sextant' class='basicBox buttonCircle'>
+          <div class="modal">
+            <div class="itemcard" name="itemcard">
+              <div class="itemtitle" name="itemtitle">
+                Building a<br>Sextant
+              </div>
+            </div>
+          </div>
+          <div id='sextantModal' class='slideModal'>
+            <div class='itemSlide'>
+              <a href="#close" id="sextantClose" class="close">X</a>
+                <ul class="slider" id='sextantSlider'>
+                  <li>
+                    <input type="radio" id="sextant1" name="slide" checked>
+                    <label for="sextant1"></label>
+                    <img src="" title="Panel 1">
+                  </li>
+
+                  <li>
+                    <input type="radio" id="sextant2" name="slide" checked>
+                    <label for="sextant2"></label>
+                    <img src="" title="Panel 2">
+                  </li>
+                  <li>
+                    <input type="radio" id="sextant3" name="slide" checked>
+                    <label for="sextant3"></label>
+                    <img src="" title="Panel 3">
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- End mainContainer -->
+    </div> <!-- End topContainer -->
+    <script>
+    $(document).ready(function() {
+
+      $.fn.setupUI = function(divid) {
+//        alert('Passed:' + divid);
+        show(divid);
+        $.blockUI({ message: $('#' + divid) });
+        $('#' + divid).css('cursor', 'default');
+      }
+
+      $.fn.closeUI = function(divid) {
+        $.unblockUI();
+        show(divid);
+        return false;
+      }
+
+      $('#mainContainer').click(function(event) {
+          if($(event.target).is('#shelter')) {
+//            alert('shelter!');
+            $.fn.setupUI('shelterModal');
+            showSlider('shelterSlider');
+          } else if ($(event.target).is('#fire')) {
+//            alert('fire!');
+            $.fn.setupUI('fireModal')
+            showSlider('fireSlider');
+          } else if ($(event.target).is('#food')) {
+//            alert('fire!');
+            $.fn.setupUI('foodModal')
+            showSlider('foodSlider');
+          } else if ($(event.target).is('#water')) {
+//            alert('fire!');
+            $.fn.setupUI('waterModal')
+            showSlider('waterSlider');
+          } else if ($(event.target).is('#daynav')) {
+//            alert('fire!');
+            $.fn.setupUI('daynavModal')
+            showSlider('daynavSlider');
+          } else if ($(event.target).is('#nightnav')) {
+//            alert('fire!');
+            $.fn.setupUI('nightnavModal')
+            showSlider('nightnavSlider');
+          } else if ($(event.target).is('#sextant')) {
+//            alert('fire!');
+            $.fn.setupUI('sextantModal')
+            showSlider('sextantSlider');
+          }
+      });
+
+
+      $('#aboutButton').click(function() {
+        $.fn.setupUI('aboutModal')
+        showSlider('aboutSlider');
+      })
+
+
+      $('#shelterClose').click(function() {
+        $.fn.closeUI('shelterModal')
+        showSlider('shelterSlider');
+      })
+      $('#fireClose').click(function() {
+        $.fn.closeUI('fireModal')
+        showSlider('fireSlider');
+      })
+      $('#foodClose').click(function() {
+        $.fn.closeUI('foodModal')
+        showSlider('foodSlider');
+      })
+      $('#waterClose').click(function() {
+        $.fn.closeUI('waterModal')
+        showSlider('waterSlider');
+      })
+      $('#daynavClose').click(function() {
+        $.fn.closeUI('daynavModal')
+        showSlider('daynavSlider');
+      })
+      $('#nightnavClose').click(function() {
+        $.fn.closeUI('nightnavModal')
+        showSlider('nightnavSlider');
+      })
+      $('#sextantClose').click(function() {
+        $.fn.closeUI('sextantModal')
+        showSlider('sextantSlider');
+      })
+      $('#aboutClose').click(function() {
+        $.fn.closeUI('aboutModal')
+        showSlider('aboutSlider');
+      })
+
+    });
+    </script>
+    <script>
+      function show(divid) {
+//        alert('show()' + divid)
+        el = document.getElementById(divid);
+        el.style.visibility = (el.style.visibility == "visible") ? "hidden": "visible";
+
+      }
+
+    function showSlider(divid) {
+       // alert(divid);
+        sl = document.getElementById(divid);
+        sl.style.opacity = (sl.style.opacity == "1") ? "0": "1";
+        sl.style.pointerEvents = (sl.style.pointerEvents == "auto") ? "none": "auto";
+  //      var temp = sl.style.pointerEvents;
+//        alert(temp);
+    }
+    </script>
+  </body>
+</html>

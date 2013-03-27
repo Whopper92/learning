@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON Loading</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <meta charset="utf-8">
+  <script type="text/javascript" src="d3/d3.v3.js"></script>
+</head>
+<body>
+
+  <script type='text/javascript'>
+
+    var dataset; // global var to hold dataset once loaded
+
+    d3.json('data/deb_builds.json', function(json) {
+
+      dataset = json; // Make loaded data accessible later on
+//        generatePs(dataset);   // Function 1: display basic data from json
+      scatter(dataset);       // Function 2: A scatter plot for last 10 builds
+      histo(dataset);         // Function 3: A histogram for last 10 builds
+    });
+
+// Scatter plot for build times
+  function scatter(dataset) {
+    var w        = 500;
+    var h        = 250;
+    var padding  = 30;
+
+
+
+    // Create the SVG canvas
+    var svg = d3.select('body')
+                .append('svg')
+                .attr('width', w)
+                .attr('height', h);
+
+    // Establish plot scaling
+
+    var xScale = d3.scale.linear()
+                  .domain([0, d3.max(dataset.deb_builds, function(d)
+                     { return parseInt(d.buildnum); })])
+                  .range([padding, w - padding * 6])
+                  .clamp(true);
+
+    var yScale = d3.scale.linear()
+                  .domain([0, d3.max(dataset.deb_builds, function(d)
+                     { return parseInt(d.buildtime); })])
+                  .range([h - padding, padding])
+                  .clamp(true);
+
+    // Map datapoints to the scatterplot
+    svg.selectAll('circle')
+        .data(dataset.deb_builds)
+        .enter()
+        .append('circle')
+        .attr({
+          cx: function(d) { return xScale(d.buildnum);},
+          cy: function(d) { return yScale(d.buildtime);},
+
+          r: 8,
+          class: 'svgDataPoint'
+        })
+        .style('fill', function(d) {
+          if ( d.buildtime > 100 || d.success == false ) {
+            return 'red';
+          } else {
+            return 'cornflowerblue';
+          }
+        })
+        .on('mouseover', function() {
+          d3.select(this)
+          .style('fill', '#660066')
+          .attr('r', 12)
+        })
+        .on('mouseout', function() {
+          d3.select(this)
+          .style('fill', function(d) {
+            if ( d.buildtime > 100 || d.success == false ) {
+              return 'red';
+            } else {
+              return 'cornflowerblue';
+            }
+          })
+          .attr('r', 8)
+        });
+
+    // Create labels
+    svg.selectAll('text')
+        .data(dataset.deb_builds)
+        .enter()
+        .append('text')
+        .text(function(d) {
+          return d.package;
+        })
+        .attr ({
+          x: function(d) { return xScale(d.buildnum);},
+          y: function(d) { return yScale(d.buildtime);}
+
+        })
+        .attr('font-family', 'sans-serif')
+        .attr('font-size', '12px')
+        .attr('fill','darkgray');
+
+    // Draw the axes
+    var xAxis = d3.svg.axis()
+                .scale(xScale)
+                .orient('bottom');
+
+
+    svg.append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(0,' + (h - padding) + ')')
+        .call(xAxis)
+
+    var yAxis = d3.svg.axis()
+                .scale(yScale)
+                .orient('left');
+
+
+    svg.append('g')
+        .attr('class', 'axis')
+        .attr('transform', 'translate(' + padding + ',0)')
+        .call(yAxis)
+
+
+  }
+
+    </script>
+
+    <div id='tooltip' class='hidden'>
+      <p><strong>Recent Build</strong></p>
+      <p><span id='value'></span></p>
+    </div>
+
+    <p> Click here to Update Data</p>
+
+  </body>
+</html>
+

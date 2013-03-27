@@ -1,0 +1,52 @@
+p:hover {
+  cursor: pointer;
+}
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+    background-color: #996633;
+}
+
+svg .pumpkin {
+    fill: yellow;
+    stroke: orange;
+    stroke-width: 5;
+    opacity: 0.5;
+ }
+
+#svgBG {
+  margin-top:20px;
+  margin-left:20px;
+}
+
+.svgDataPoint:hover,
+.histoBar:hover {
+  fill: #FFFF00;
+  r: 15;
+  cursor: pointer;
+}
+
+.svgDataPoint,
+.histoBar {
+  opacity: 0.6;
+}
+
+.axis path,
+.axis line,
+.xhistoAxis path,
+.xhistoAxis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.xhistoAxis text {
+  display: none;
+}

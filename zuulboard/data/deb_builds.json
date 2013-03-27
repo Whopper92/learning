@@ -1,0 +1,93 @@
+{
+  "deb_builds": [
+    {
+      "builder":"whopper",
+      "buildnum":"1",
+      "package":"dashboard",
+      "buildtime":"70",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"mosesm",
+      "buildnum":"2",
+      "package":"apache",
+      "buildtime":"105",
+      "success":false,
+      "builderror":"dh_usrlocal: rmdir debian/scst/usr/local/include/scst returned exit code 1 <br>make: *** [binary] Error 1<br>dpkg-buildpackage: error: debian/rules binary gave error exit status 2"
+    },
+
+    {
+      "builder":"haus",
+      "buildnum":"3",
+      "package":"active-record",
+      "buildtime":"72",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"mike",
+      "buildnum":"4",
+      "package":"enterprise",
+      "buildtime":"200",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"rahul",
+      "buildnum":"5",
+      "package":"driver",
+      "buildtime":"66",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"branan",
+      "buildnum":"6",
+      "package":"ruby",
+      "buildtime":"45",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"justin",
+      "buildnum":"7",
+      "package":"mongoDB",
+      "buildtime":"100",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"haus",
+      "buildnum":"8",
+      "package":"perl",
+      "buildtime":"190",
+      "success":false,
+      "builderror":"dh_install: libxfce4util-dev missing files (usr/lib/lib*.a), aborting<br> make: *** [clean] Error 255<br>dpkg-buildpackage: error: fakeroot debian/rules clean gave error exit status 2<br>debuild: fatal error at line 1325"
+    },
+
+    {
+      "builder":"mosesm",
+      "buildnum":"9",
+      "package":"mysql",
+      "buildtime":"44",
+      "success":true,
+      "builderror":"none"
+    },
+
+    {
+      "builder":"whopper",
+      "buildnum":"10",
+      "package":"postgres",
+      "buildtime":"40",
+      "success":true,
+      "builderror":"none"
+    }
+  ]
+}
