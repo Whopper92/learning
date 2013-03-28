@@ -1,0 +1,78 @@
+body {
+  background: #F0F0F0;
+}
+
+#itemPopContainer {
+  position: absolute;
+  left: 400px;
+  top: 40px;
+  width: 400px
+  height: 300px;
+}
+
+#itemPopTitle {
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 5px;
+  left: 300px
+  top: 5px;
+  z-index: 999;
+  font-size: 16px;
+  color: orange;
+}
+
+#itemPopTitleBar {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 5px;
+  width: 150px;
+  height: 1px;
+  style: solid;
+  color: gray;
+  background-color: gray;
+}
+
+.histoBar:hover {
+  cursor: pointer;
+}
+
+.axis path,
+.axis line,
+.xhistoAxis path,
+.xhistoAxis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.yhistoAxis text {
+  display: none;
+}
+
+.tooltip {
+  position: absolute;
+  width: 270px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events:none;
+}
+
+.tooltip.hidden {
+  display: none;
+}
+
+
+.tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}

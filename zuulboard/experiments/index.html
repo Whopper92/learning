@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style/main.css" />
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+          // var dataset = [ 5, 10, 15, 20, 25 ];
+          var dataset1 = [];                        //Initialize empty array
+          for (var i = 0; i < 25; i++) {           //Loop 25 times
+            var newNumber = Math.round(Math.random() * 30);  //New random number (0-30)
+            dataset1.push(newNumber);             //Add new number to array
+          }
+
+          var dataset2 = [];                        //Initialize empty array
+          for (var i = 0; i < 8; i++) {           //Loop 25 times
+            var newNumber = Math.round(Math.random() * 20);  //New random number (0-30)
+            dataset2.push(newNumber);             //Add new number to array
+          }
+
+          // 1) Mapping a simple array to paragraphs
+          /*
+          d3.select("body").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .text(function(d) { return "I can count up to " + d; })
+            .style("color", function(d) {
+              if (d > 15) {   //Threshold of 15
+                return "red";
+              } else {
+                return "black";
+              }
+            });
+          */
+
+          // 2) A basic bar graph with preset data using divs
+          d3.select("body").selectAll("div")
+            .data(dataset1)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+              var barHeight = d * 5;  //Scale up by factor of 5
+              return barHeight + "px";
+            })
+
+          // 3) Using SVGs rather than divs for visualizations
+          // First, create the canvas for the visualization
+          var w = 700;
+          var h = 200;
+          var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+          // Now, use our data to produce visual objects
+          var circles = svg.selectAll("circle")
+              .data(dataset2)
+              .enter()
+              .append("circle");
+
+          circles.attr("cx", function(d, i) {
+            return (i * 50) + 25;
+          })
+          .attr("cy", h/2)
+          .attr("r", function(d) {
+            return d;
+          })
+          .attr("fill", "yellow")
+          .attr("stroke", "orange")
+          .attr("stroke-width", function(d) {
+            return d/4;
+          });
+
+          // Some JSON
+          var jsonFruit = {
+            "kind": "grape",
+            "color": "red",
+            "quantity": 12,
+            "tasty": true
+          };
+
+          // Another bar chart using SVG
+          var canvasWidth  = 500;
+          var canvasHeight = 100;
+          var canvasPadding = 1;
+
+          // create the canvas
+          var svg = d3.select("body")
+            .append("svg")
+            .attr("width", canvasWidth)
+            .attr("height", canvasHeight)
+            .attr("id", "svgBG");
+
+          svg.selectAll("rect")
+             .data(dataset1)
+             .enter()
+             .append("rect")
+             .attr("fill", function(d) {
+               if (d > 0 && d < 10) {   //Threshold of 15
+                 return "green";
+               } else if ( d > 10 && d < 20) {
+                 return "orange";
+               } else {
+                 return "red";
+               }
+             })
+           .attr("x", function(d, i) {
+             return i * (canvasWidth / dataset1.length);
+           })
+           .attr("y", function(d) {
+             return canvasHeight - (d * 4);  //Height minus data value
+           })
+           .attr("width", canvasWidth / dataset1.length - canvasPadding)
+           .attr("height", function(d) {
+             return d * 4;  //Just the data value
+           });
+
+            // Now, we add labels
+            svg.selectAll("text")
+             .data(dataset1)
+             .enter()
+             .append("text")
+             .text(function(d) {
+               return d;
+             })
+             .attr("x", function(d, i) {
+                return i * (canvasWidth / dataset1.length) 
+                       + (canvasWidth / dataset1.length - canvasPadding) / 2;
+             })
+             .attr("y", function(d) {
+               return canvasHeight - (d * 4) + 15;
+             })
+             .attr("text-anchor", "middle")
+             .attr("font-family", "sans-serif")
+             .attr("font-size", "11px")
+             .attr("fill", "white");
+
+        </script>
+    </body>
+</html>
