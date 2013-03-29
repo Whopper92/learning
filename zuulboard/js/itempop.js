@@ -17,7 +17,7 @@ function drawPopHisto(dataset) {
   var xScale = d3.scale.linear()
               .domain([0, d3.max(dataset, function(d)
                 { return parseInt(d.purchased); })])
-              .range([0, w]);
+              .range([0, w - 10]);
 
   var yScale = d3.scale.ordinal()
                 .domain(d3.range(dataset.length))

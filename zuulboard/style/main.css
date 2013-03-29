@@ -1,0 +1,27 @@
+/* Generic Container elements */
+
+body {
+  background: #F0F0F0;
+}
+
+.metricContainer {
+  width: 400px;
+  height: 300px;
+}
+
+.containerTitle {
+  z-index: 999;
+  font-size: 16px;
+  color: orange;
+}
+
+.containerTitleBar {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 5px;
+  width: 150px;
+  height: 1px;
+  style: solid;
+  color: gray;
+  background-color: gray;
+}

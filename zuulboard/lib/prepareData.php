@@ -14,22 +14,41 @@
       mysql_select_db(DB_NAME) or die ('Could not select database: ' . mysql_error() );
     }
 
-    function itemPoptoJSON() {
-      $extractQuery   = 'SELECT itemname, purchased FROM inventory ORDER BY purchased desc';
+    function prepareJSON($dbResult) {
+      $data = array();
+      for ($x = 0; $x < mysql_num_rows($dbResult); $x++) {
+        $data[] = mysql_fetch_assoc($dbResult);
+      }
+
+      return json_encode($data);
+      mysql_close($dbc);
+
+    }
+
+    function itemPoptoJSON($self_obj) {
+      $extractQuery   = 'SELECT itemname, purchased FROM inventory ORDER BY purchased DESC';
       $extractQuerydo = mysql_query($extractQuery);
 
       if (! $extractQuery ) {
         echo mysql_error();
         die;
+      } else {
+        $data = $self_obj->prepareJSON($extractQuerydo);
+        return $data;
       }
+    }
 
-      $data = array();
-      for ($x = 0; $x < mysql_num_rows($extractQuerydo); $x++) {
-        $data[] = mysql_fetch_assoc($extractQuerydo);
+    function freqBuyerstoJSON($self_obj) {
+      $extractQuery   = 'SELECT username, numpurchased FROM users ORDER BY numpurchased DESC LIMIT 7';
+      $extractQuerydo = mysql_query($extractQuery);
+
+      if (! $extractQuery ) {
+        echo mysql_error();
+        die;
+      } else {
+        $data = $self_obj->prepareJSON($extractQuerydo);
+        return $data;
       }
-
-      return json_encode($data);
-      mysql_close($dbc);
     }
   }
 ?>
