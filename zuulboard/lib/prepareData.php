@@ -50,5 +50,24 @@
         return $data;
       }
     }
+
+    function getTotalSpent($self_obj) {
+      $allitemq    = "SELECT itemprice,purchased from inventory;";
+      $allitemdo   = mysql_query($allitemq);
+      $total = 0;
+      while( $allitemrow  = mysql_fetch_array($allitemdo))
+        {
+          $total = $total + $allitemrow['itemprice'] * $allitemrow['purchased'];
+        }
+      if (strpos($total, '.') === false) {
+         $total = "$total".'.00';
+      }
+
+      $reverse = strrev( $total );
+      if ( $reverse[1] === "." ) {
+        $total = "$total".'0';
+      }
+      return $total;
+    }
   }
 ?>

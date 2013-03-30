@@ -118,8 +118,6 @@ function drawFreqBuyersHisto(dataset) {
       .attr('transform', 'translate('+ xPadding +', 0)')
       .call(yAxis)
 
-
-
 }
 
 function displayTooltip(tooltipID, contentID, xPosition, yPosition, username, numpurchased) {
