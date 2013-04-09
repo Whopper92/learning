@@ -13,6 +13,8 @@ A project with the purpose of learning to create simple websites
 using the Ruby Sinatra web framework. The Zuulboard project will
 eventually be migrated here.
 
+    Running with shotgun: shotgun -o 0.0.0.0 -p 4567
+
 ### timeblocks
 
 A project based on my own obsession with time management. Timeblocks

@@ -1,6 +1,6 @@
-path = File.expand_path "../", __FILE__
-
 require 'sinatra'
-require "#{path}/basics.rb"
+
+require "./basics.rb"
+require "./recall.rb"
 
 run Sinatra::Application
